@@ -1,8 +1,37 @@
-import { TextField, Button, Box } from "@mui/material";
-import { motion } from "framer-motion";
+import React, { useState } from 'react';
+import { TextField, Button, Box } from '@mui/material';
+import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 function ContactForm() {
   const colors = ['#FF5959', '#59A1FF', '#70F801'];
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send('service_eprc4go', 'template_cgn2cbb', formData, 'vh4irZVxNkYXNTWQY')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully!');
+      })
+      .catch((error) => {
+        console.log('FAILED...', error);
+        alert('Failed to send email. Please try again later.');
+      });
+  };
 
   return (
     <Box sx={{
@@ -14,14 +43,16 @@ function ContactForm() {
       borderRadius: 2,
       marginRight: '30vw'
     }}>
-      <form noValidate autoComplete="off">
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <motion.div whileHover={{ rotateZ: 1.1, scale: 1.05, paddingBottom: 10, paddingTop: 10 }}>
           <TextField
             id="outlined-name"
             label="Name"
             variant="outlined"
             fullWidth
-            className="mb-4"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             sx={{
               '& input': { color: 'gray' },
               '& label': { color: colors[0] },
@@ -47,7 +78,9 @@ function ContactForm() {
             label="Email"
             variant="outlined"
             fullWidth
-            className="mb-4"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             sx={{
               '& input': { color: 'gray' },
               '& label': { color: colors[1] },
@@ -75,7 +108,9 @@ function ContactForm() {
             fullWidth
             multiline
             rows={4}
-            className="mb-4"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             sx={{
               '& textarea': { color: 'gray' },
               '& label': { color: colors[2] },
@@ -97,6 +132,7 @@ function ContactForm() {
         <div className="mb-4"></div>
         <Button 
           variant="contained" 
+          type="submit"
           sx={{
             background: 'orange',
             color: 'white',
