@@ -8,7 +8,7 @@ let projectCards = projects.map((project) =>
 
 function ProjectStack() {
   return (
-    <Stack container spacing={8} className="mt-8 mb-8">
+    <Stack container spacing={8}>
         {projectCards}
     </Stack>
   );

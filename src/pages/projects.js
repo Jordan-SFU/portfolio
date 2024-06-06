@@ -32,7 +32,12 @@ function Projects() {
             <div className="mt-16"></div>
             <ProjectStack />
             <div className="mt-16"></div>
-            <ProjectCarousel />
+            <Typography variant="h3" sx={{ textAlign: 'center' }} color='gray'>
+                More Projects
+            </Typography>
+            <div className="mt-8 mb-24">
+                <ProjectCarousel />
+            </div>
         </div>
     );
 }
