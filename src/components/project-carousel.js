@@ -1,6 +1,6 @@
 import Carousel from "react-material-ui-carousel";
 import extraprojects from "../constants/extra-projectsConstants";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import ProjectLayoutCarousel from "./project-layout-carousel";
 
 function ProjectCarousel() {
