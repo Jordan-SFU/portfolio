@@ -41,15 +41,15 @@ function Home(){
                         <Divider orientation="vertical" flexItem sx={{ borderWidth: '2px', borderRadius: 1 }} />
                         <div className='text-left'>
                             <span className='flex'>  
-                                <Typography variant="h1" style={{ color: 'white', marginLeft: 20 }}>
+                                <Typography variant="h1" style={{ color: 'white', marginLeft: 20, fontSize: 96 }}>
                                     Hey, I'm
                                 </Typography>
-                                <Typography variant="h1" style={{ color: 'orange' }}>
+                                <Typography variant="h1" style={{ color: 'orange', fontSize: 96 }}>
                                     &nbsp;Jordan!
                                 </Typography>
                             </span> 
-                            <Typography variant="h4" style={{ color: 'white', marginLeft: 20 }}>
-                                A visual programmer and 3D artist!
+                            <Typography variant="h4" style={{ color: 'gray', marginLeft: 20 }}>
+                                Visual programmer and 3D artist!
                             </Typography> 
                         </div>
                     </span>

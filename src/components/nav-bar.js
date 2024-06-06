@@ -35,8 +35,8 @@ function NavBar() {
                         to="/" 
                         sx={{ color: 'inherit', textDecoration: 'none' }}
                     >
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <img src="/logo.svg" alt="Logo" style={{ width: 24, height: 24, marginLeft: 8 }} />
+                        <Box sx={{ display: 'flex', alignItems: 'center', fontSize: 16 }}>
+                            <img src="/logo.svg" alt="Logo" style={{ width: 32, height: 32, marginLeft: 8 }} />
                             <p>&nbsp;Jordan McKenzie</p>
                         </Box>
                     </Button>

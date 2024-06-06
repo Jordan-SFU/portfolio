@@ -36,6 +36,6 @@ let testProject3 = {
     github: "https://en.wikipedia.org/wiki/Cow"
 }
   
-let projects = [testProject, testProject2, testProject3]
+let extraprojects = [testProject, testProject2, testProject3]
 
-export default projects;
+export default extraprojects;

@@ -29,6 +29,11 @@ const programs = [
     },
     {
         index: 1,
+        name: "Maya",
+        image: "https://img.icons8.com/color/1600/autodesk-maya.png"
+    },
+    {
+        index: 2,
         name: "Unity",
         image: "https://i.pinimg.com/originals/e8/4d/a2/e84da2716205f99019d7a01aa05cd33c.png"
     }

@@ -11,7 +11,8 @@ function ContactForm() {
       backdropFilter: 'blur(3px)',
       brightness: '120%',
       padding: 5,
-      borderRadius: 2
+      borderRadius: 2,
+      marginRight: '30vw'
     }}>
       <form noValidate autoComplete="off">
         <motion.div whileHover={{ rotateZ: 1.1, scale: 1.05, paddingBottom: 10, paddingTop: 10 }}>
