@@ -1,39 +1,31 @@
 let testProject = {
     index: 0,
-    name: "Test Project",
-    description: "This is a test project, containing placeholder text and an image. A longer description will be added in the future.",
-    image: "https://placehold.co/600x400",
-    tags: ["React", "JavaScript", "HTML", "CSS"],
-    expandedText: 
-        <div>
-            <h1>hmm...</h1>
-            <p>testing react stuff</p>
-            <img src="https://placehold.co/100" alt="placeholder" />
-        </div>,
-    link: "https://en.wikipedia.org/wiki/Duck",
-    github: "https://en.wikipedia.org/wiki/Cow"
+    name: "Quackii",
+    description: "A desktop pet powered by AI!",
+    image: "/quackii.png",
+    tags: ["Python", "JavaScript", "OpenAI"],
+    link: "https://devpost.com/software/quackii",
+    github: "https://github.com/pnotato/ducky"
 }
   
 let testProject2 = {
     index: 1,
-    name: "Test Project 2",
-    description: "This is another test project, containing placeholder text and an image. A longer description will be added in the future.",
-    image: "https://placehold.co/600x400",
-    tags: ["Python", "JavaScript", "C#"],
-    expandedText: "This is a test of the expanded text, version 2",
-    link: "https://en.wikipedia.org/wiki/Duck",
-    github: "https://en.wikipedia.org/wiki/Cow"
+    name: "WeCycle",
+    description: "A mobile app for tracking your recycling habits!",
+    image: "/wecycle.png",
+    tags: ["Python", "Kivy", "JSON"],
+    link: "https://devpost.com/software/wecycle-z937sr",
+    github: "https://github.com/Jordan-SFU/WeCycle"
 }
   
 let testProject3 = {
     index: 2,
-    name: "Another test",
-    description: "more tests, containing placeholder text and an image. A longer description will be added in the future.",
-    image: "https://placehold.co/600x400",
-    tags: ["Python", "aaaaa", "more tags"],
-    expandedText: "This is a test of the expanded text, version 3",
-    link: "https://en.wikipedia.org/wiki/Duck",
-    github: "https://en.wikipedia.org/wiki/Cow"
+    name: "WFC Visualizer",
+    description: "A visualizer for the Wave Function Collapse algorithm!",
+    image: "/wfc.png",
+    tags: ["Unity2D", "C#"],
+    link: "https://joodoon.itch.io/wave-function-collapse-visualizer",
+    github: "https://joodoon.itch.io/wave-function-collapse-visualizer"
 }
   
 let extraprojects = [testProject, testProject2, testProject3]

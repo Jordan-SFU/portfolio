@@ -24,7 +24,7 @@ function Contact() {
                 Contact Me
             </Typography>
             <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='gray'>
-                Feel free to reach out to me with any questions, comments, or concerns. I'm always looking to connect with new people and learn new things, so don't hesitate to send me a message!
+                Don't hesitate to reach out to me to get in contact! I'm always open to new opportunities and collaborations!
             </Typography>
             <div className="mt-4"></div>
             <ContactForm />

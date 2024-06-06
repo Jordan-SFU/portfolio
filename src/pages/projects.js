@@ -26,7 +26,7 @@ function Projects() {
                     Projects
                 </Typography>
                 <Typography variant="body1" sx={{ paddingBottom: 2, marginLeft: '30vw', textAlign: 'right' }} color='gray'>
-                    Here are some of the projects I've worked on. I've done a lot of different things, so there's a lot to see here. Hopefully, you find something you like!
+                    Here are some of the projects I've worked on, ranging from hackathons, school projects, and personal learning experiences!
                 </Typography>
             </div>
             <div className="mt-16"></div>

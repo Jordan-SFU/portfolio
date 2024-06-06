@@ -27,7 +27,7 @@ function About() {
                 About Me
             </Typography>
             <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='gray'>
-                I'm a creative, visual programmer aiming to expand my skills! I need a lot of text here to test alignment and other spacing and such, so I will continue to ramble on for a long, long time. Hopefully, I add the actual text here at some point, but until then, have this.
+                Hey, I'm Jordan! I'm currently a student at Simon Fraser University, working towards a major in computing science, and a minor in interactive arts and technologies. I'm a creative programmer hoping to work with computer graphics, and I love creating 3D art and animations!
             </Typography>
             <div className="mt-8" style={{ textAlign: 'right' }}>
                 <SkillGrid skills={skills} alignment='flex-end' />
