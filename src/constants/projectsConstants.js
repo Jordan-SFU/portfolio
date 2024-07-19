@@ -17,7 +17,7 @@ let testProject2 = {
     name: "ASLingo",
     description: "An online translator for American Sign Language using machine learning!",
     image: "/aslingo.png",
-    tags: ["Python", "JavaScript", "MediaPipe"],
+    tags: ["Python", "TensorFlow", "MediaPipe"],
     expandedText: 
         <div>
 

@@ -44,7 +44,7 @@ function ContactForm() {
       marginRight: '30vw'
     }}>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <motion.div whileHover={{ rotateZ: 1.1, scale: 1.05, paddingBottom: 10, paddingTop: 10 }}>
+        <motion.div whileHover={{ scale: 1.025 }}>
           <TextField
             id="outlined-name"
             label="Name"
@@ -72,7 +72,7 @@ function ContactForm() {
           />
         </motion.div>
         <div className="mb-4"></div>
-        <motion.div whileHover={{ rotateZ: 1.1, scale: 1.05, paddingBottom: 10, paddingTop: 10 }}>
+        <motion.div whileHover={{ scale: 1.025 }}>
           <TextField
             id="outlined-email"
             label="Email"
@@ -100,7 +100,7 @@ function ContactForm() {
           />
         </motion.div>
         <div className="mb-4"></div>
-        <motion.div whileHover={{ rotateZ: 1.1, scale: 1.05, paddingBottom: 10, paddingTop: 10 }}>
+        <motion.div whileHover={{ scale: 1.025 }}>
           <TextField
             id="outlined-message"
             label="Message"
