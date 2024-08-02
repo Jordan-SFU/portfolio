@@ -60,7 +60,15 @@ function Projects() {
                                 //backdropFilter: 'blur(3px)',
                                 boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)',
                                 '&.Mui-selected': {
-                                    //borderColor: 'orange',
+                                    color: 'orange',
+                                    backgroundColor: 'rgba(255, 165, 0, 0.1)',
+                                },
+                                //selected and hover
+                                '&:hover': {
+                                    color: 'gray', 
+                                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                                },
+                                '&.Mui-selected:hover': {
                                     color: 'orange',
                                     backgroundColor: 'rgba(255, 165, 0, 0.1)',
                                 },
@@ -79,7 +87,15 @@ function Projects() {
                                 //backdropFilter: 'blur(3px)',
                                 boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)',
                                 '&.Mui-selected': {
-                                    //borderColor: 'orange',
+                                    color: 'orange',
+                                    backgroundColor: 'rgba(255, 165, 0, 0.1)',
+                                },
+                                //selected and hover
+                                '&:hover': {
+                                    color: 'gray', 
+                                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                                },
+                                '&.Mui-selected:hover': {
                                     color: 'orange',
                                     backgroundColor: 'rgba(255, 165, 0, 0.1)',
                                 },

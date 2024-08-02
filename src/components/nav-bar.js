@@ -3,28 +3,32 @@ import { AppBar, Box, Toolbar, Button } from '@mui/material';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 
+let step = 0;
+
 const pages = [
     {
         name: "About",
         link: "#about",
-        scroll: 700,
+        scroll: 25,
         color: '#FF5959'
     },
     {
         name: "Projects",
         link: "#projects",
-        scroll: 1525,
+        scroll: 50,
         color: '#59A1FF'
     },
     {
         name: "Contact",
         link: "#contact",
-        scroll: 4000,
+        scroll: 75,
         color: '#70F801'
     }
 ];
 
 function NavBar() {
+    step = document.documentElement.scrollHeight;
+
     return (
         <AppBar position="fixed" sx={{ background: 'rgba(53, 53, 53, 0.75)', backdropFilter: 'blur(3px)' }}>
             <Toolbar>
@@ -46,7 +50,7 @@ function NavBar() {
                 {pages.map((page) => (
                     <motion.div whileHover={{ scale: 1.25 }} key={page.name}>
                         <Button 
-                            onClick={() => { window.scrollTo({ top: page.scroll, behavior: "smooth" }) }} 
+                            onClick={() => { window.scrollTo({ top: step * (page.scroll/100), behavior: "smooth" }) }} 
                             component={Link} 
                             to={page.link} 
                             sx={{ color: page.color, textDecoration: 'none' }}

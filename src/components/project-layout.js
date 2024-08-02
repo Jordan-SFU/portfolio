@@ -39,7 +39,7 @@ function ProjectLayout({ project }) {
 
   const alignment = project.index % 2 === 0 ? 'right' : 'left';
 
-  const textBoxMargin = project.index % 2 === 0 ? { marginRight: '-75px', marginLeft: '100px' } : { marginLeft: '-75px', marginRight: '100px'};
+  const textBoxMargin = project.index % 2 === 0 ? { marginRight: '-10%', marginLeft: '0px' } : { marginRight: '0px', marginLeft: '-10%'};
 
   return (
     <Box
@@ -48,26 +48,32 @@ function ProjectLayout({ project }) {
       alignItems="center"
       justifyContent="center"
     >
-      <Box
-        sx={{
-          zIndex: 1,
-          textAlign: cardLayout,
-          backgroundColor: 'transparent',
-          justifyContent: alignment,
-          justifyItems: alignment,
-          ...textBoxMargin
-        }}
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x: expanded && cardLayout === 'right' ? '-100%' : 0 }}
+        transition={{ duration: 0.1 }}
+        style={{ zIndex: 1, textAlign: cardLayout, backgroundColor: 'transparent', flexGrow: 1, width: '400px', ...textBoxMargin }}
       >
-        <Typography variant="h5" color="orange">{project.name}</Typography>
+        <Typography variant="h5" color="orange" textAlign={cardLayout}>{project.name}</Typography>
         <div className="mb-4"></div>
 
-        <motion.div whileHover={{ scale: 1.05, padding: 5 }} >
+        <motion.div 
+          initial={{ width: '100%' }}
+          animate={{ width: expanded ? '200%' : '100%' }}
+          transition={{ duration: 0.1 }}
+          style={{ 
+            position: 'relative',
+            alignContent: 'center',
+            justifyContent: 'center',
+            justifyItems: 'center',
+          }}
+        >
             <Box sx={{ background: 'rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(3px)', paddingY: 2, paddingX: 5, borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)' }} onClick={() => handleExpandClick()} >
                 <Typography variant="h7" className="mb-3 mx-4" color="gray">{project.description}</Typography>
                 <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }}/>
-                    <Typography variant="h7" className="mt-2 mx-4" color="gray">
+                    <Typography variant="h7" className="mt-2 mx-4" color="gray" textAlign='left'>
                         {project.expandedText}
                     </Typography>
                 </Collapse>
@@ -81,16 +87,21 @@ function ProjectLayout({ project }) {
             </ul>
         </Box>
 
-        <IconButton onClick={() => handleGithubClick()} style={{ color: 'gray' }}>
+        <IconButton onClick={() => handleGithubClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
             <GitHubIcon />
         </IconButton>
-        <IconButton onClick={() => handleLinkClick()} style={{ color: 'gray' }}>
+        <IconButton onClick={() => handleLinkClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
             <OpenInNewIcon />
         </IconButton>
-        
-      </Box>
-
-      <Box component="img" src={project.image} alt="Project Image" sx={{ height: '50%', width: '50%', zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)' }} />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: expanded ? 0 : 1, scale: expanded ? 0 : 1 }}
+        transition={{ duration: 0.1 }}
+      >
+        <Box component="img" src={project.image} alt="Project Image" sx={{  zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)' }} />
+      </motion.div>
     </Box>
   );
 }
