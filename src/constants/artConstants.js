@@ -1,6 +1,6 @@
 let artProject1 = {
     index: 0,
-    name: "Character Sculpting",
+    name: "3D Character Sculpt",
     description: "A high poly textured sculpt of a character!",
     video: "/Pippin_Turntable.mov",
     tags: ["Blender", "High Poly", "Sculpting"],
@@ -12,7 +12,7 @@ let artProject1 = {
 
 let artProject2 = {
     index: 1,
-    name: "Rigged Robot",
+    name: "BD-1 Rig",
     description: "An animation ready rigged droid from Starwars!",
     video: "/BD-1 Walking.mov",
     tags: ["3DS Max", "Rigging", "Materials"],
@@ -24,7 +24,7 @@ let artProject2 = {
 
 let artProject3 = {
     index: 2,
-    name: "Animated Short Film",
+    name: "Rubber Duck Debugging",
     description: "A short film about rubber duck debugging!",
     video: "/bouncing duck.mp4",
     tags: ["Maya", "Animation", "Rigging"],

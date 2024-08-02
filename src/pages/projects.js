@@ -20,7 +20,7 @@ function Projects() {
 
     return (
         <div>
-            <div className={`animated-background ${!showProgramming ? 'reverse' : ''}`}></div>
+            <div className={`animated-background`}></div>
             <div className="ml-8 mr-8 mb-16 mt-4">
                 <Box display='flex' flexDirection='row' alignItems="center" justifyContent="flex-end" className='mt-4'>
                     <Divider 
