@@ -9,19 +9,19 @@ const pages = [
     {
         name: "About",
         link: "#about",
-        scroll: 25,
+        scroll: 15,
         color: '#FF5959'
     },
     {
         name: "Projects",
         link: "#projects",
-        scroll: 50,
+        scroll: 33,
         color: '#59A1FF'
     },
     {
         name: "Contact",
         link: "#contact",
-        scroll: 75,
+        scroll: 85,
         color: '#70F801'
     }
 ];

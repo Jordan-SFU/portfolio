@@ -6,7 +6,8 @@ let artProject1 = {
     tags: ["Blender", "High Poly", "Sculpting"],
     expandedText: 
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+            <video src='/Pippin_Turntable.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
+            <video src='/Pippin_Headshot_Turntable.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
         </div>,
 }
 
@@ -18,7 +19,9 @@ let artProject2 = {
     tags: ["3DS Max", "Rigging", "Materials"],
     expandedText: 
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+            <video src='/BD-1 Walking.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
+            <video src='/BD-1 Jumping.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
+            <video src='/IMG_2164.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
         </div>,
 }
 
@@ -30,7 +33,8 @@ let artProject3 = {
     tags: ["Maya", "Animation", "Rigging"],
     expandedText: 
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+            <video src='/bouncing duck.mp4' width='600px' height='400px' alt='' autoPlay loop muted></video>
+            <a href='https://www.youtube.com/watch?v=la3_uyoUlGk'>Link to full video</a>
         </div>,
 }
 

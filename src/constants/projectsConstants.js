@@ -6,7 +6,7 @@ let testProject = {
     tags: ["C#", "Unity2D"],
     expandedText: 
         <div>
-            <p><img src="/midas.png" width='600px' height='400px' alt=''></img>Created as part of my capstone project, "Project Midas" is a 2D siderscroller autorunner where timing and precision is key.</p>
+            <p><img src="/midas.png" width='600px' height='400px' alt=''></img>Created as part of my capstone project, "Project Midas" is a 2D siderscroller autorunner where timing and precision is key. I learned alot about physics programming and working with Unity to create a fun experience. <img src='/project midas sc.png' height='400px' width='600px' alt=''></img></p>
         </div>,
     link: "https://joodoon.itch.io/project-midas",
     github: "https://joodoon.itch.io/project-midas"
