@@ -37,8 +37,6 @@ function ProjectLayout({ project }) {
 
   const cardLayout = project.index % 2 === 0 ? 'left' : 'right';
 
-  const alignment = project.index % 2 === 0 ? 'right' : 'left';
-
   const textBoxMargin = project.index % 2 === 0 ? { marginRight: '-10%', marginLeft: '0px' } : { marginRight: '0px', marginLeft: '-10%'};
 
   return (

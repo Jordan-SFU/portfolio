@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, CardContent, CardMedia, CardActions, Chip, Box, Collapse, Divider, Typography, IconButton } from '@mui/material';
+import { Chip, Box, Collapse, Divider, Typography } from '@mui/material';
 import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion } from 'framer-motion';
@@ -24,8 +24,6 @@ function ArtLayout({ art }) {
   ));
 
   const cardLayout = art.index % 2 === 0 ? 'left' : 'right';
-
-  const alignment = art.index % 2 === 0 ? 'right' : 'left';
 
   const textBoxMargin = art.index % 2 === 0 ? { marginRight: '-10%', marginLeft: '0px' } : { marginRight: '0px', marginLeft: '-10%' };
 
