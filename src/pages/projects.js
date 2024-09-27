@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ProjectStack from "../components/project-stack";
-import ArtStack from '../components/art-stack';
 import { Box, Divider, Typography, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import ProjectCarousel from '../components/project-carousel';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
