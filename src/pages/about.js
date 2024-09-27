@@ -2,11 +2,11 @@ import { Box, Typography, Divider } from "@mui/material";
 import SkillGrid from "../components/skill-grid";
 import info from "../constants/skillsConstants.js"; // import the default export
 
-const { skills, programs } = info; // destructure the needed properties
+const { skills, programs, frameworks } = info; // destructure the needed properties
 
 function About() {
     return (
-        <div className="ml-8 mb-16 mt-4">
+        <div className="ml-8 mb-16 mt-4" id="about">
             <Box display='flex' flexDirection='row-reverse' alignItems="center" justifyContent="flex-start" className='mt-4'>
                 <Divider 
                     orientation="horizontal" 
@@ -30,10 +30,13 @@ function About() {
                 Hey, I'm Jordan! I'm currently a student at Simon Fraser University, working towards a major in computing science, and a minor in interactive arts and technologies. I'm a creative programmer hoping to work with computer graphics, and I love creating 3D art and animations!
             </Typography>
             <div className="mt-8" style={{ textAlign: 'right' }}>
-                <SkillGrid skills={skills} alignment='flex-end' />
+                <SkillGrid skills={skills} alignment='flex-start' />
             </div>
             <div className="mt-8" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <SkillGrid skills={programs} alignment='flex-end' />
+                <SkillGrid skills={frameworks} alignment='flex-end' />
+            </div>
+            <div className="mt-8" style={{ textAlign: 'right' }}>
+                <SkillGrid skills={programs} alignment='flex-start' />
             </div>
         </div>
     );

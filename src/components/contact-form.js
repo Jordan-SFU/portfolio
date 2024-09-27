@@ -54,7 +54,7 @@ function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             sx={{
-              '& input': { color: 'gray' },
+              '& textarea': { color: 'gray' },
               '& label': { color: colors[0] },
               '& fieldset': { borderColor: colors[0] },
               '& .MuiOutlinedInput-root': {
@@ -82,7 +82,7 @@ function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             sx={{
-              '& input': { color: 'gray' },
+              '& textarea': { color: 'gray' },
               '& label': { color: colors[1] },
               '& fieldset': { borderColor: colors[1] },
               '& .MuiOutlinedInput-root': {

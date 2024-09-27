@@ -21,6 +21,19 @@ const skills = [
     }
 ];
 
+const frameworks =[
+    {
+        index: 0,
+        name: "React",
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    },
+    {
+        index: 2,
+        name: "Node.js",
+        image: "https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+    },
+];
+
 const programs = [
     {
         index: 0,
@@ -39,6 +52,6 @@ const programs = [
     }
 ];
 
-const info = { skills, programs };
+const info = { skills, programs, frameworks };
 
 export default info;

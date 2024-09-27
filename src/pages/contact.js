@@ -3,7 +3,7 @@ import ContactForm from '../components/contact-form';
 
 function Contact() {
     return (
-        <div className="ml-8 mr-8 mb-16 mt-4">
+        <div className="ml-8 mr-8 mb-16 mt-4" id='contact'>
             <Box display='flex' flexDirection='row-reverse' alignItems="center" justifyContent="flex-start" className='mt-4'>
                 <Divider 
                     orientation="horizontal" 

@@ -25,7 +25,7 @@ function Home(){
     }, []);
 
     return(
-        <div style={{ overflow: 'hidden' }}>
+        <div style={{ overflow: 'hidden' }} id='home'>
             <NavBar />
             <SocialsSidebar />
             <div style={{ position: 'relative', height: '90vh' }}>

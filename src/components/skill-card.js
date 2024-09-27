@@ -6,7 +6,7 @@ function SkillCard({ skill }) {
 
   return (
     <Tilt options={{ scale: 1, 	reset: true, easing: "cubic-bezier(.03,.98,.52,.99)", speed: 500 }}>
-        <Card sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', width: '12vw', height:'30vh', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', backdropFilter: 'blur(3px)', brightness: '120%', borderWidth: '0px', borderColor: 'rgba(0, 0, 0, .2)' }}>
+        <Card sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', width: '150px', height:'225px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', backdropFilter: 'blur(3px)'}}>
             <CardMedia
                 component="img"
                 height="140"

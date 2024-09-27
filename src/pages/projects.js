@@ -19,7 +19,7 @@ function Projects() {
     };
 
     return (
-        <div>
+        <div id='projects'>
             <div className={`animated-background`}></div>
             <div className="ml-8 mr-8 mb-16 mt-4">
                 <Box display='flex' flexDirection='row' alignItems="center" justifyContent="flex-end" className='mt-4'>
@@ -42,7 +42,7 @@ function Projects() {
                     Projects
                 </Typography>
                 <Typography variant="body1" sx={{ paddingBottom: 2, marginLeft: '30vw', textAlign: 'right' }} color='gray'>
-                    Here are some of the projects I've worked on, ranging from hackathons, school projects, and just for fun!
+                    Here are some of the projects I've worked on, ranging from hackathons, school projects, and some just for fun!
                 </Typography>
                 <Box display='flex' justifyContent='right' mt={4}>
                     <ToggleButtonGroup
@@ -121,7 +121,7 @@ function Projects() {
                         {showProgramming ? (
                             <>
                                 <div className="mt-16"></div>
-                                <ProjectStack />
+                                <ProjectStack projectType = "programming" />
                                 <div className="mt-16"></div>
                                 <Typography variant="h3" sx={{ textAlign: 'center' }} color='gray'>
                                     More Projects
@@ -133,7 +133,7 @@ function Projects() {
                         ) : (
                             <>
                                 <div className="mt-16"></div>
-                                <ArtStack />
+                                <ProjectStack projectType = "art" />
                                 <div className="mt-16"></div>
                             </>
                         )}
