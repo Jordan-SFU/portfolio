@@ -31,16 +31,16 @@ function Home(){
             <div style={{ position: 'relative', height: '90vh' }}>
                 <div style={{ 
                     position: 'absolute', 
-                    top: '30%', 
-                    left: '30%', 
-                    transform: 'translate(-50%, -50%)', 
+                    top: '20vh', 
+                    left: '10vw', 
+                    //transform: 'translate(-50%, -50%)', 
                     zIndex: 2, 
                     textAlign: 'center' 
                 }}> 
                     <span className='flex'>
                         <Divider orientation="vertical" flexItem sx={{ borderWidth: '2px', borderRadius: 1 }} />
                         <div className='text-left'>
-                            <span className='flex'>  
+                            <span>  
                                 <Typography variant="h1" style={{ color: 'white', marginLeft: 20, fontSize: 96 }}>
                                     Hey, I'm
                                 </Typography>

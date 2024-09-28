@@ -1,12 +1,19 @@
 import SkillCard from './skill-card.js';
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 
 function SkillGrid({ skills, alignment }) {
     return (
-        <Grid container spacing={-30} justifyContent={alignment}>
-            {skills.map((skill) => (
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <SkillCard skill={skill} />
+        <Grid container justifyContent={alignment}>
+            {skills.map((skill, index) => (
+                <Grid item key={index}>
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            zIndex: index,
+                        }}
+                    >
+                        <SkillCard skill={skill} index={index} />
+                    </Box>
                 </Grid>
             ))}
         </Grid>

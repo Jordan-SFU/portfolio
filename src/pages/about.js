@@ -29,14 +29,8 @@ function About() {
             <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='gray'>
                 Hey, I'm Jordan! I'm currently a student at Simon Fraser University, working towards a major in computing science, and a minor in interactive arts and technologies. I'm a creative programmer hoping to work with computer graphics, and I love creating 3D art and animations!
             </Typography>
-            <div className="mt-8" style={{ textAlign: 'right' }}>
-                <SkillGrid skills={skills} alignment='flex-start' />
-            </div>
-            <div className="mt-8" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <SkillGrid skills={frameworks} alignment='flex-end' />
-            </div>
-            <div className="mt-8" style={{ textAlign: 'right' }}>
-                <SkillGrid skills={programs} alignment='flex-start' />
+            <div className="mt-8">
+                <SkillGrid skills={skills} alignment='space-around' />
             </div>
         </div>
     );

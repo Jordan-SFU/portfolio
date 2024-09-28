@@ -31,14 +31,14 @@ function ProjectLayoutCarousel({ project }) {
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ position: 'relative', height: '100vh' }}>
       <Typography variant="h5" color="orange" sx={{ mb: 2 }}>{project.name}</Typography>
       <Box
-        sx={{ position: 'relative', width: '80%' }}
+        sx={{ position: 'relative', width: '30vw', height: '20vw' }}
         component={motion.div}
       >
         <Box
           component="img"
           src={project.image}
           alt="Project Image"
-          sx={{ borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '90%', margin: 'auto' }}
+          sx={{ borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '30vw', height: '20vw', margin: 'auto' }}
         />
         <Box
           sx={{
@@ -47,7 +47,6 @@ function ProjectLayoutCarousel({ project }) {
             left: 0,
             right: 0,
             bottom: 0,
-            width: '90%',
             margin: 'auto',
             background: 'rgba(53, 53, 53, 0.9)', 
             backdropFilter: 'blur(3px)',

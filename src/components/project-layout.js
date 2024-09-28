@@ -1,6 +1,6 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import { Chip, Box, Collapse, Divider, Typography, Tooltip } from '@mui/material';
+import { Chip, Box, Collapse, Divider, Typography, Tooltip, Grid } from '@mui/material';
 import { useState } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -72,9 +72,9 @@ function ProjectLayout({ project }) {
 
         <Box display='flex' flexDirection={project.index % 2 === 0 ? 'row' : 'row-reverse'} alignItems="center" className='mt-4' sx={{}} justifyItems={cardLayout}>
           <Divider orientation="horizontal" sx={{ borderColor: 'orange', paddingX: 5, borderWidth: '2px', borderRadius: 1, marginX: '12px' }} textAlign={cardLayout} />
-          <ul style={{ display: 'flex', alignItems: 'center', listStyle: 'none' }}>
+          <Grid container spacing={1} sx={{ marginRight: `${project.index%2 ===0 ? '100px' : '10px'}`, marginLeft: `${project.index%2 ===1 ? '100px' : '10px'}`, justifyContent: `${project.index % 2 === 0 ? 'left' : 'right'}`}}>
             {tags}
-          </ul>
+          </Grid>
         </Box>
 
         <IconButton onClick={() => handleGithubClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
@@ -86,9 +86,9 @@ function ProjectLayout({ project }) {
       </motion.div>
 
       {!project.isVideo ?
-        <Box component="img" src={project.image} alt="Project Image" sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '600px', height: '400px', 'object-fit': 'cover' }} />
+        <Box component="img" src={project.image} alt="Project Image" sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '30vw', height: '20vw', 'object-fit': 'cover' }} />
         :
-        <Box component="video" src={project.image} width='600px' height='400px' alt='' autoPlay loop muted sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', 'object-fit': 'cover' }}></Box>
+        <Box component="video" src={project.image} width='30vw' height='20vw' alt='' autoPlay loop muted sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', 'object-fit': 'cover' }}></Box>
       }
     </Box>
   );

@@ -24,10 +24,19 @@ function NavBar() {
 
     const handleScroll = (id) => {
         const section = document.getElementById(id);
+        const navbarHeight = document.querySelector('header').offsetHeight;
+        
         if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+            const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = sectionPosition - navbarHeight;
+    
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
     };
+    
 
     return (
         <AppBar position="fixed" sx={{ background: 'rgba(53, 53, 53, 0.75)', backdropFilter: 'blur(3px)' }}>

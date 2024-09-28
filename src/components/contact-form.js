@@ -41,7 +41,7 @@ function ContactForm() {
       brightness: '120%',
       padding: 5,
       borderRadius: 2,
-      marginRight: '30vw'
+      width: { xs: '100%', sm: '100%', md: '100%', lg: '60%', xl: '50%' }, 
     }}>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <motion.div whileHover={{ scale: 1.025 }}>
