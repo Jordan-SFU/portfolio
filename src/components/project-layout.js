@@ -60,11 +60,11 @@ function ProjectLayout({ project }) {
         <div className="mb-4"></div>
 
         <Box sx={{ background: 'rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(3px)', paddingY: 2, paddingX: 5, borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)' }} onClick={() => handleExpandClick()} >
-          <Typography variant="h7" className="mb-3 mx-4" color="gray">{project.description}</Typography>
+          <Typography variant="h7" className="mb-3 mx-4" color="gray" style={{userSelect: 'none'}}>{project.description}</Typography>
           <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }} />
-            <Typography variant="h7" className="mt-2 mx-4" color="gray" textAlign='left'>
+            <Typography variant="h7" className="mt-2 mx-4" color="gray" textAlign='left' style={{userSelect: 'none'}}>
               {project.expandedText}
             </Typography>
           </Collapse>

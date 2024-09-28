@@ -1,5 +1,4 @@
 import { Typography, Card, CardContent, CardMedia, Divider } from "@mui/material"
-import { Tilt } from 'react-tilt'
 import { useState } from 'react';
 
 function SkillCard({ skill, index }) {

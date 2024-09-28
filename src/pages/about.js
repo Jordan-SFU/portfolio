@@ -2,7 +2,7 @@ import { Box, Typography, Divider } from "@mui/material";
 import SkillGrid from "../components/skill-grid";
 import info from "../constants/skillsConstants.js"; // import the default export
 
-const { skills, programs, frameworks } = info; // destructure the needed properties
+const { skills } = info; // destructure the needed properties
 
 function About() {
     return (
