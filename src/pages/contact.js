@@ -23,7 +23,7 @@ function Contact() {
             <Typography variant="h3" sx={{ paddingBottom: 2, textAlign: 'left' }} color='gray'>
                 Contact Me
             </Typography>
-            <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='gray'>
+            <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='#c2c2c2'>
                 Don't hesitate to reach out to me to get in contact! I'm always open to new opportunities and collaborations!
             </Typography>
             <div className="mt-4"></div>

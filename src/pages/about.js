@@ -26,7 +26,7 @@ function About() {
             <Typography variant="h3" sx={{ paddingBottom: 2, textAlign: 'left' }} color='gray'>
                 About Me
             </Typography>
-            <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='gray'>
+            <Typography variant="body1" sx={{ paddingBottom: 2, marginRight: '30vw', textAlign: 'left' }} color='#c2c2c2'>
                 Hey, I'm Jordan! I'm currently a student at Simon Fraser University, working towards a major in computing science, and a minor in interactive arts and technologies. I'm a creative programmer hoping to work with computer graphics, and I love creating 3D art and animations!
             </Typography>
             <div className="mt-8">

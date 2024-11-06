@@ -16,7 +16,7 @@ function SkillCard({ skill, index }) {
                 transition: 'transform 0.3s ease, opacity 0.3s ease',
                 transform: isHovered ? 'translateY(-20px) scale(1.1)' : 'none',
                 zIndex: isHovered ? 10 : index,
-                opacity: isHovered ? 1 : 0.25,
+                opacity: isHovered ? 1 : .5,
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

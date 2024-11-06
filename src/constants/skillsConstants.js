@@ -11,7 +11,7 @@ const skills = [
     },
     {
         index: 2,
-        name: "C Sharp",
+        name: "C#",
         image: "https://iconape.com/wp-content/files/sh/51404/png/c--4.png"
     },
     {

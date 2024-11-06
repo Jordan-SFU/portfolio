@@ -5,7 +5,7 @@ import ProjectLayoutCarousel from "./project-layout-carousel";
 
 function ProjectCarousel() {
     return (
-        <Box sx={{ p: 1, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', background: 'rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(3px)', margin: 'auto', width: '50vw', maxWidth: '600px', borderRadius: 2 }}>
+        <Box sx={{ p: 1, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', background: 'rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(3px)', margin: 'auto', maxWidth: '600px', borderRadius: 2 }}>
             <Carousel
                 navButtonsAlwaysVisible={true}
                 navButtonsProps={{

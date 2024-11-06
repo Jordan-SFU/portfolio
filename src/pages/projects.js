@@ -40,10 +40,11 @@ function Projects() {
                 <Typography variant="h3" sx={{ paddingBottom: 2, textAlign: 'right' }} color='gray'>
                     Projects
                 </Typography>
-                <Typography variant="body1" sx={{ paddingBottom: 2, marginLeft: '30vw', textAlign: 'right' }} color='gray'>
+                <Typography variant="body1" sx={{ paddingBottom: 2, marginLeft: '30vw', textAlign: 'right' }} color='#c2c2c2'>
                     Here are some of the projects I've worked on, ranging from hackathons, school projects, and some just for fun!
                 </Typography>
-                <Box display='flex' justifyContent='right' mt={4}>
+                
+                <Box display='none' justifyContent='right' mt={4}>
                     <ToggleButtonGroup
                         value={showProgramming}
                         exclusive
@@ -106,6 +107,7 @@ function Projects() {
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </Box>
+
             </div>
             <SwitchTransition>
                 <CSSTransition

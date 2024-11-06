@@ -38,41 +38,60 @@ function ProjectLayout({ project }) {
 
   const cardLayout = project.index % 2 === 0 ? 'left' : 'right';
 
-  const textBoxMargin = project.index % 2 === 0 ? { marginRight: '-10%', marginLeft: '0px' } : { marginRight: '0px', marginLeft: '-10%' };
+  // Set margin style conditionally based on alignment
+  const textBoxStyle = {
+    zIndex: 1,
+    textAlign: cardLayout,
+    backgroundColor: 'transparent',
+    flexGrow: 1,
+    width: '400px',
+  };
 
   return (
     <Box
       display="flex"
-      flexDirection={project.index % 2 === 0 ? 'row' : 'row-reverse'}
+      flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'}
       alignItems="center"
       justifyContent="center"
     >
       <motion.div
-        style={{ zIndex: 1, textAlign: cardLayout, backgroundColor: 'transparent', flexGrow: 1, width: '400px', ...textBoxMargin }}
+        style={textBoxStyle}
       >
         <Typography variant="h5" color="orange" textAlign={cardLayout}>
           {project.name}
-          &nbsp;&nbsp;&nbsp;
+          &nbsp;
           {project.award ? <Tooltip title={project.award} arrow>
             <EmojiEventsIcon fontSize='large' sx={{ color: 'orange', cursor: 'pointer' }} />
           </Tooltip> : null}
         </Typography>
         <div className="mb-4"></div>
 
-        <Box sx={{ background: 'rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(3px)', paddingY: 2, paddingX: 5, borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)' }} onClick={() => handleExpandClick()} >
-          <Typography variant="h7" className="mb-3 mx-4" color="gray" style={{userSelect: 'none'}}>{project.description}</Typography>
-          <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }} />
-            <Typography variant="h7" className="mt-2 mx-4" color="gray" textAlign='left' style={{userSelect: 'none'}}>
-              {project.expandedText}
-            </Typography>
-          </Collapse>
+        <Box 
+          sx={{ 
+            background: 'rgba(0, 0, 0, 0.1)', 
+            backdropFilter: 'blur(3px)', 
+            paddingY: 2, 
+            paddingX: 5, 
+            borderRadius: 2, 
+            boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', 
+          }} 
+          onClick={() => handleExpandClick()} 
+        >
+          <div>
+            <Typography variant="h7" className="mb-3 mx-4" color="#c2c2c2" style={{ userSelect: 'none' }}>{project.description}</Typography>
+            <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }} />
+              <Typography variant="h7" className="mt-2 mx-4" color="#c2c2c2" textAlign='left' style={{ userSelect: 'none' }}>
+                {project.expandedText}
+              </Typography>
+            </Collapse>
+          </div>
         </Box>
 
-        <Box display='flex' flexDirection={project.index % 2 === 0 ? 'row' : 'row-reverse'} alignItems="center" className='mt-4' sx={{}} justifyItems={cardLayout}>
+        <Box display='flex' flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'} alignItems="center" className='mt-4' sx={{}} justifyItems={cardLayout}>
           <Divider orientation="horizontal" sx={{ borderColor: 'orange', paddingX: 5, borderWidth: '2px', borderRadius: 1, marginX: '12px' }} textAlign={cardLayout} />
-          <Grid container spacing={1} sx={{ marginRight: `${project.index%2 ===0 ? '100px' : '10px'}`, marginLeft: `${project.index%2 ===1 ? '100px' : '10px'}`, justifyContent: `${project.index % 2 === 0 ? 'left' : 'right'}`}}>
+          <Grid container spacing={1} sx={{ marginRight: `${cardLayout === 'left' ? '100px' : '10px'}`, marginLeft: `${cardLayout === 'right' ? '100px' : '10px'}`, justifyContent: `${cardLayout === 'left' ? 'left' : 'right'}` }}>
             {tags}
           </Grid>
         </Box>
