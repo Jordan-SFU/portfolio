@@ -58,7 +58,7 @@ let project3 = {
         <div>
             <p>
                 ASLingo was made in 12 hours for nwhacks' beginner hackathon with a small group of me, and two others. My role in this project was working with MediaPipe
-                to recognize hand gestures and positining, and Tensorflow to create a machine learning model that can identify ASL letters based on the MediaPipe data.
+                to recognize hand gestures and positioning, and Tensorflow to create a machine learning model that can identify ASL letters based on the MediaPipe data.
                 I also worked on connecting this to our frontend to create a real-time translation tool.
             </p>
             <p>
