@@ -47,7 +47,17 @@ let SDF = {
     link: "https://joodoon.itch.io/sdf-lava-lamp-shader",
     github: "https://github.com/Jordan-SFU/SDF-Lava-lamp"
 }
+
+let win98 = {
+    index: 5,
+    name: "Report Tracker",
+    description: "A report tracker with a built in map styled like the windows 98 operating system!",
+    image: "/win98.png",
+    tags: ["Javascript", "HTML", "CSS", "APIs"],
+    link: "https://camblsoup.github.io/CMPT272Proj/",
+    github: "https://github.com/camblsoup/CMPT272Proj"
+}
   
-let extraprojects = [SDF, Quackii, ColrGuessr, WFC, WeCycle];
+let extraprojects = [SDF, Quackii, ColrGuessr, WFC, win98, WeCycle];
 
 export default extraprojects;
