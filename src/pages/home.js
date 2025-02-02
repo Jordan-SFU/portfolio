@@ -9,7 +9,7 @@ import SocialsSidebar from "../components/socials-sidebar";
 import { Box, Divider, Typography } from "@mui/material";
 import '../index.css'; // Import your CSS file
 
-function Home(){
+function Home({isArt}){
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
@@ -70,7 +70,7 @@ function Home(){
             }}>
                 <div className="animated-background"></div>
                 <About />
-                <Projects />
+                <Projects art={isArt}/>
                 <Contact />  
             </Box>
             <Footer />

@@ -5,8 +5,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home  isArt={false} />} />
+        <Route path="/art" element={<Home  isArt={true} />} />
+        <Route index element={<Home isArt={false}/>} />
       </Routes>
     </BrowserRouter>
   );

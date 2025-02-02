@@ -66,16 +66,16 @@ function ProjectLayout({ project }) {
         </Typography>
         <div className="mb-4"></div>
 
-        <Box 
-          sx={{ 
-            background: 'rgba(0, 0, 0, 0.1)', 
-            backdropFilter: 'blur(3px)', 
-            paddingY: 2, 
-            paddingX: 5, 
-            borderRadius: 2, 
-            boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', 
-          }} 
-          onClick={() => handleExpandClick()} 
+        <Box
+          sx={{
+            background: 'rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(3px)',
+            paddingY: 2,
+            paddingX: 5,
+            borderRadius: 2,
+            boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)',
+          }}
+          onClick={() => handleExpandClick()}
         >
           <div>
             <Typography variant="h7" className="mb-3 mx-4" color="#c2c2c2" style={{ userSelect: 'none' }}>{project.description}</Typography>
@@ -96,12 +96,17 @@ function ProjectLayout({ project }) {
           </Grid>
         </Box>
 
-        <IconButton onClick={() => handleGithubClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
-          <GitHubIcon />
-        </IconButton>
-        <IconButton onClick={() => handleLinkClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
-          <OpenInNewIcon />
-        </IconButton>
+        {project.isArt ? <></> :
+          <>
+            <IconButton onClick={() => handleGithubClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
+              <GitHubIcon />
+            </IconButton>
+            <IconButton onClick={() => handleLinkClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
+              <OpenInNewIcon />
+            </IconButton>
+          </>
+        }
+
       </motion.div>
 
       {!project.isVideo ?

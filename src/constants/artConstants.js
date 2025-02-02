@@ -9,7 +9,8 @@ let artProject1 = {
             <video src='/Pippin_Turntable.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
             <video src='/Pippin_Headshot_Turntable.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
         </div>,
-    isVideo: true
+    isVideo: true,
+    isArt: true
 }
 
 let artProject2 = {
@@ -24,7 +25,8 @@ let artProject2 = {
             <video src='/BD-1 Jumping.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
             <video src='/IMG_2164.mov' width='600px' height='400px' alt='' autoPlay loop muted></video>
         </div>,
-    isVideo: true
+    isVideo: true,
+    isArt: true
 }
 
 let artProject3 = {
@@ -38,7 +40,8 @@ let artProject3 = {
             <video src='/bouncing duck.mp4' width='600px' height='400px' alt='' autoPlay loop muted></video>
             <a href='https://www.youtube.com/watch?v=la3_uyoUlGk'>Link to full video</a>
         </div>,
-    isVideo: true
+    isVideo: true,
+    isArt: true
 }
 
 let art = [artProject1, artProject2, artProject3];

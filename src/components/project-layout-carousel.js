@@ -38,7 +38,7 @@ function ProjectLayoutCarousel({ project }) {
           component="img"
           src={project.image}
           alt="Project Image"
-          sx={{ borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '400px', height: '300px', margin: 'auto' }}
+          sx={{ borderRadius: 2, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '400px', height: '300px', margin: 'auto', objectFit: 'contain' }}
         />
         <Box
           sx={{
