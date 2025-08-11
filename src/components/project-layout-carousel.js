@@ -6,26 +6,19 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { motion } from 'framer-motion';
 
 function ProjectLayoutCarousel({ project }) {
-
-  const handleLinkClick = () => {
-    window.open(project.link);
-  }
-
-  const handleGithubClick = () => {
-    window.open(project.github);
-  }
+  const handleLinkClick = () => window.open(project.link);
+  const handleGithubClick = () => window.open(project.github);
 
   const colors = ['#FF5959', '#59A1FF', '#70F801'];
-
-  const tags = project.tags.map((tag, index) => (
+  const tags = React.useMemo(() => project.tags.map((tag, index) => (
     <Chip 
-      key={index} 
+      key={tag + index} 
       label={tag} 
       className="mr-2" 
       sx={{ color: colors[index % colors.length], backgroundColor: 'transparent', borderColor: colors[index % colors.length]}}
       variant="outlined"
     />
-  ));
+  )), [project.tags]);
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ position: 'relative', height: '100vh' }}>
@@ -90,4 +83,4 @@ function ProjectLayoutCarousel({ project }) {
   );
 }
 
-export default ProjectLayoutCarousel;
+export default React.memo(ProjectLayoutCarousel);

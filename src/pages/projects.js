@@ -8,6 +8,7 @@ import '../index.css';
 import PaletteIcon from '@mui/icons-material/Palette';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
+import ExperienceTimeline from '../components/experience-timeline';
 
 function Projects({ art }) {
     const [showProgramming, setShowProgramming] = useState(!art);
@@ -19,7 +20,7 @@ function Projects({ art }) {
     };
 
     return (
-        <div id='projects'>
+        <div id='experience'> {/* updated anchor id to reflect combined section */}
             <div className={`animated-background`}></div>
             <div className="ml-8 mr-8 mb-16 mt-4">
                 <Box display='flex' flexDirection='row' alignItems="center" justifyContent="flex-end" className='mt-4'>
@@ -34,16 +35,17 @@ function Projects({ art }) {
                             marginRight: 2
                         }}
                     />
-                    <Typography variant="h5" sx={{ paddingBottom: 2, textAlign: 'right' }} color='orange'>
+                    <Typography variant="h5" sx={{ paddingBottom: 1, textAlign: 'right' }} color='orange'>
                         What I've Done
                     </Typography>
                 </Box>
-                <Typography variant="h3" sx={{ paddingBottom: 2, textAlign: 'right' }} color='gray'>
-                    Projects
+                <Typography variant="h4" sx={{ textAlign: 'right', color: 'gray', pb: 1 }}>
+                    Experience
                 </Typography>
-                <Typography variant="body1" sx={{ paddingBottom: 2, marginLeft: '30vw', textAlign: 'right' }} color='#c2c2c2'>
-                    Here are some of the projects I've worked on, ranging from hackathons, school projects, and some just for fun!
+                <Typography variant="body1" sx={{ paddingBottom: 4, marginLeft: '30vw', textAlign: 'right' }} color='#c2c2c2'>
+                    A blend of professional experience and creative/technical projects showcasing my passion for interactive, visual technology and art.
                 </Typography>
+                <ExperienceTimeline />
 
                 <Box display='flex' justifyContent='right' mt={4} alignItems='center'>
                     <Typography variant="body2" sx={{ paddingBottom: 1, textAlign: 'right', padding: '5px'}} color='gray'>

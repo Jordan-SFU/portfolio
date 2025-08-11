@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import NavBar from "../components/nav-bar";
 import DuckCanvas from "../components/3d-duck";
 import Projects from "./projects";
@@ -7,23 +7,9 @@ import Contact from "./contact";
 import Footer from "../components/footer";
 import SocialsSidebar from "../components/socials-sidebar";
 import { Box, Divider, Typography } from "@mui/material";
-import '../index.css'; // Import your CSS file
+import '../index.css';
 
 function Home({isArt}){
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const handleMouseMove = (event) => {
-            setMousePosition({ x: event.clientX, y: event.clientY });
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
     return(
         <div style={{ overflow: 'hidden' }} id='home'>
             <NavBar />
@@ -33,7 +19,6 @@ function Home({isArt}){
                     position: 'absolute', 
                     top: '20vh', 
                     left: '10vw', 
-                    //transform: 'translate(-50%, -50%)', 
                     zIndex: 2, 
                     textAlign: 'center' 
                 }}> 
@@ -49,13 +34,12 @@ function Home({isArt}){
                                 </Typography>
                             </span> 
                             <Typography variant="h4" style={{ color: 'gray', marginLeft: 20 }}>
-                                Visual programmer and 3D artist!
+                                Technical Artist and Visual Programmer
                             </Typography> 
                         </div>
                     </span>
                 </div>
-                
-                <DuckCanvas mousePosition={mousePosition} />
+                <DuckCanvas />
             </div>
             <div>
             <Box sx={{

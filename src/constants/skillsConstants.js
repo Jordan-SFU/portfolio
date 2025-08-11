@@ -21,43 +21,27 @@ const skills = [
     },
     {
         index: 4,
-        name: "React",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-    },
-    {
-        index: 5,
-        name: "Node.js",
-        image: "https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
-    },
-    {
-        index: 6,
         name: "Blender",
         image: "https://i.imgur.com/rYdo1xG.png"
     },
     {
-        index: 7,
+        index: 5,
         name: "Maya",
         image: "https://img.icons8.com/color/1600/autodesk-maya.png"
     },
     {
-        index: 8,
+        index: 6,
         name: "Unity",
         image: "https://i.pinimg.com/originals/e8/4d/a2/e84da2716205f99019d7a01aa05cd33c.png"
+    },
+    {
+        index: 7,
+        name: "Houdini",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Houdini3D_icon.png"
     }
 ];
 
-const frameworks =[
-    {
-        index: 0,
-        name: "React",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-    },
-    {
-        index: 2,
-        name: "Node.js",
-        image: "https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
-    },
-];
+const frameworks =[]; // cleared React and Node.js
 
 const programs = [
     {
@@ -74,6 +58,11 @@ const programs = [
         index: 2,
         name: "Unity",
         image: "https://i.pinimg.com/originals/e8/4d/a2/e84da2716205f99019d7a01aa05cd33c.png"
+    },
+    {
+        index: 3,
+        name: "Houdini",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Houdini3D_icon.png"
     }
 ];
 

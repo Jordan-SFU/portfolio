@@ -1,121 +1,77 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import { Chip, Box, Collapse, Divider, Typography, Tooltip, Grid } from '@mui/material';
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { motion } from 'framer-motion';
+import GlassPanel from './common/glass-panel';
 
 function ProjectLayout({ project }) {
   const [expanded, setExpanded] = useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-    console.log(expanded);
-  };
-
-  const handleLinkClick = () => {
-    window.open(project.link);
-  }
-
-  const handleGithubClick = () => {
-    window.open(project.github);
-  }
+  const handleExpandClick = useCallback(() => setExpanded(e => !e), []);
+  const handleLinkClick = useCallback(() => window.open(project.link), [project.link]);
+  const handleGithubClick = useCallback(() => window.open(project.github), [project.github]);
 
   const colors = ['#FF5959', '#59A1FF', '#70F801'];
-
-  const tags = project.tags.map((tag, index) => (
+  const tags = useMemo(() => project.tags.map((tag, index) => (
     <Chip
-      key={index}
+      key={tag + index}
       label={tag}
       className="mr-2"
       sx={{ color: colors[index % colors.length], backgroundColor: 'transparent', borderColor: colors[index % colors.length] }}
       variant="outlined"
     />
-  ));
+  )), [project.tags]);
 
   const cardLayout = project.index % 2 === 0 ? 'left' : 'right';
-
-  // Set margin style conditionally based on alignment
-  const textBoxStyle = {
-    zIndex: 1,
-    textAlign: cardLayout,
-    backgroundColor: 'transparent',
-    flexGrow: 1,
-    width: '400px',
-  };
+  const textBoxStyle = { zIndex: 1, textAlign: cardLayout, backgroundColor: 'transparent', flexGrow: 1, width: '400px' };
 
   return (
-    <Box
-      display="flex"
-      flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <motion.div
-        style={textBoxStyle}
-      >
+    <Box display="flex" flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'} alignItems="center" justifyContent="center">
+      <motion.div style={textBoxStyle}>
         <Typography variant="h5" color="orange" textAlign={cardLayout}>
-          {project.name}
-          &nbsp;
-          {project.award ? <Tooltip title={project.award} arrow>
-            <EmojiEventsIcon fontSize='large' sx={{ color: 'orange', cursor: 'pointer' }} />
-          </Tooltip> : null}
+          {project.name}&nbsp;
+          {project.award ? <Tooltip title={project.award} arrow><EmojiEventsIcon fontSize='large' sx={{ color: 'orange', cursor: 'pointer' }} /></Tooltip> : null}
         </Typography>
         <div className="mb-4"></div>
 
-        <Box
-          sx={{
-            background: 'rgba(0, 0, 0, 0.1)',
-            backdropFilter: 'blur(3px)',
-            paddingY: 2,
-            paddingX: 5,
-            borderRadius: 2,
-            boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)',
-          }}
-          onClick={() => handleExpandClick()}
-        >
-          <div>
-            <Typography variant="h7" className="mb-3 mx-4" color="#c2c2c2" style={{ userSelect: 'none' }}>{project.description}</Typography>
-            <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }} />
-              <Typography variant="h7" className="mt-2 mx-4" color="#c2c2c2" textAlign='left' style={{ userSelect: 'none' }}>
-                {project.expandedText}
-              </Typography>
-            </Collapse>
-          </div>
-        </Box>
+        <GlassPanel sx={{ py: 2, px: 5, cursor: 'pointer' }} onClick={handleExpandClick}>
+          <Typography variant="h7" className="mb-3 mx-4" color="#c2c2c2" sx={{ userSelect: 'none' }}>{project.description}</Typography>
+          <ExpandMoreIcon style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: 'gray' }} />
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Divider sx={{ borderWidth: '2px', color: 'gray', borderRadius: 1 }} />
+            <Typography variant="h7" className="mt-2 mx-4" color="#c2c2c2" textAlign='left' sx={{ userSelect: 'none' }}>
+              {project.expandedText}
+            </Typography>
+          </Collapse>
+        </GlassPanel>
 
-        <Box display='flex' flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'} alignItems="center" className='mt-4' sx={{}} justifyItems={cardLayout}>
-          <Divider orientation="horizontal" sx={{ borderColor: 'orange', paddingX: 5, borderWidth: '2px', borderRadius: 1, marginX: '12px' }} textAlign={cardLayout} />
-          <Grid container spacing={1} sx={{ marginRight: `${cardLayout === 'left' ? '100px' : '10px'}`, marginLeft: `${cardLayout === 'right' ? '100px' : '10px'}`, justifyContent: `${cardLayout === 'left' ? 'left' : 'right'}` }}>
+        <Box display='flex' flexDirection={cardLayout === 'left' ? 'row' : 'row-reverse'} alignItems="center" className='mt-4' justifyItems={cardLayout}>
+          <Divider orientation="horizontal" sx={{ borderColor: 'orange', px: 5, borderWidth: '2px', borderRadius: 1, mx: '12px' }} textAlign={cardLayout} />
+          <Grid container spacing={1} sx={{ mr: `${cardLayout === 'left' ? '100px' : '10px'}`, ml: `${cardLayout === 'right' ? '100px' : '10px'}`, justifyContent: `${cardLayout === 'left' ? 'left' : 'right'}` }}>
             {tags}
           </Grid>
         </Box>
 
-        {project.isArt ? <></> :
+        {!project.isArt && (
           <>
-            <IconButton onClick={() => handleGithubClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
-              <GitHubIcon />
-            </IconButton>
-            <IconButton onClick={() => handleLinkClick()} alignContent={cardLayout} style={{ color: 'gray' }}>
-              <OpenInNewIcon />
-            </IconButton>
+            <IconButton onClick={handleGithubClick} style={{ color: 'gray' }}><GitHubIcon /></IconButton>
+            <IconButton onClick={handleLinkClick} style={{ color: 'gray' }}><OpenInNewIcon /></IconButton>
           </>
-        }
-
+        )}
       </motion.div>
 
-      {!project.isVideo ?
-        <Box component="img" src={project.image} alt="Project Image" sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '30vw', height: '20vw', 'object-fit': 'cover' }} />
-        :
-        <Box component="video" src={project.image} width='30vw' height='20vw' alt='' autoPlay loop muted sx={{ zIndex: 0, borderRadius: 2, marginX: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', 'object-fit': 'cover' }}></Box>
-      }
+      {!project.isVideo ? (
+        <Box component="img" src={project.image} alt="Project Image" sx={{ zIndex: 0, borderRadius: 2, mx: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', width: '30vw', height: '20vw', objectFit: 'cover' }} />
+      ) : (
+        <Box component="video" src={project.image} width='30vw' height='20vw' alt='' autoPlay loop muted sx={{ zIndex: 0, borderRadius: 2, mx: 5, boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)', objectFit: 'cover' }}></Box>
+      )}
     </Box>
   );
 }
 
-export default ProjectLayout;
+export default React.memo(ProjectLayout);

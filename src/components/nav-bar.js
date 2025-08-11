@@ -9,8 +9,8 @@ const pages = [
         color: '#FF5959'
     },
     {
-        name: "Projects",
-        id: "projects",
+        name: "Experience", // renamed to Experience
+        id: "experience", // updated id
         color: '#59A1FF'
     },
     {

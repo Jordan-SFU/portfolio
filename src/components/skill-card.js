@@ -1,8 +1,7 @@
-import { Typography, Card, CardContent, CardMedia, Divider } from "@mui/material"
-import { useState } from 'react';
+import { Typography, Card, CardContent, CardMedia, Divider } from "@mui/material";
+import React, { memo } from 'react';
 
 function SkillCard({ skill, index }) {
-    const [isHovered, setIsHovered] = useState(false);
     const colors = ['#FF5959', '#59A1FF', '#70F801'];
 
     return (
@@ -13,13 +12,13 @@ function SkillCard({ skill, index }) {
                 height: '225px',
                 boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.5)',
                 backdropFilter: 'blur(3px)',
-                transition: 'transform 0.3s ease, opacity 0.3s ease',
-                transform: isHovered ? 'translateY(-20px) scale(1.1)' : 'none',
-                zIndex: isHovered ? 10 : index,
-                opacity: isHovered ? 1 : .5,
+                transition: 'transform 0.35s ease, opacity 0.35s ease',
+                opacity: .55,
+                '&:hover': {
+                    transform: 'scale(1.1)',
+                    opacity: 1
+                }
             }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
         >
             <CardMedia
                 component="img"
@@ -45,4 +44,4 @@ function SkillCard({ skill, index }) {
     );
 }
 
-export default SkillCard;
+export default memo(SkillCard);
