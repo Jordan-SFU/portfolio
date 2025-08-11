@@ -9,6 +9,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { motion } from 'framer-motion';
 import GlassPanel from './common/glass-panel';
 
+const colors = ['#FF5959', '#59A1FF', '#70F801'];
 function ProjectLayout({ project }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -16,7 +17,6 @@ function ProjectLayout({ project }) {
   const handleLinkClick = useCallback(() => window.open(project.link), [project.link]);
   const handleGithubClick = useCallback(() => window.open(project.github), [project.github]);
 
-  const colors = ['#FF5959', '#59A1FF', '#70F801'];
   const tags = useMemo(() => project.tags.map((tag, index) => (
     <Chip
       key={tag + index}

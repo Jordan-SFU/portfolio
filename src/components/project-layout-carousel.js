@@ -5,17 +5,18 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { motion } from 'framer-motion';
 
+const TAG_COLORS = ['#FF5959', '#59A1FF', '#70F801'];
+
 function ProjectLayoutCarousel({ project }) {
   const handleLinkClick = () => window.open(project.link);
   const handleGithubClick = () => window.open(project.github);
 
-  const colors = ['#FF5959', '#59A1FF', '#70F801'];
   const tags = React.useMemo(() => project.tags.map((tag, index) => (
     <Chip 
       key={tag + index} 
       label={tag} 
       className="mr-2" 
-      sx={{ color: colors[index % colors.length], backgroundColor: 'transparent', borderColor: colors[index % colors.length]}}
+      sx={{ color: TAG_COLORS[index % TAG_COLORS.length], backgroundColor: 'transparent', borderColor: TAG_COLORS[index % TAG_COLORS.length]}}
       variant="outlined"
     />
   )), [project.tags]);
@@ -71,7 +72,7 @@ function ProjectLayoutCarousel({ project }) {
               <OpenInNewIcon />
             </IconButton>
           </Box>
-          <Typography variant="h7" color="gray" sx={{ mb: 2, px: 2 }}>{project.description}</Typography>
+          <Typography variant="body2" color="gray" sx={{ mb: 2, px: 2 }}>{project.description}</Typography>
           <Box display='flex' alignItems="center" justifyContent="center" sx={{ mt: 2 }}>
             <ul style={{ display: 'flex', alignItems: 'center', listStyle: 'none', padding: 0 }}>
               {tags}
